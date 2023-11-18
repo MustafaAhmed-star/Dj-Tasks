@@ -28,3 +28,7 @@ def book_delete(request, pk):
 
     return render(request, 'library/book_confirm_delete.html', {'book': book})
     
+class BookUpdateView(UpdateView):
+    model = Book
+    template_name = 'library/book_create.html'
+    fields = ['title', 'author', 'price']
