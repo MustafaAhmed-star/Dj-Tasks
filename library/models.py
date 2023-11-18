@@ -26,7 +26,7 @@ class Book(models.Model):
     price = models.DecimalField(max_digits=5,decimal_places=2)
     
     def __str__(self):
-        return f'{self.title}:{self.author}'
+        return f'{self.title}:{self.author.name}'
         
 class Review(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
