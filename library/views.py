@@ -20,7 +20,7 @@ class BookCreateView(CreateView):
 
 
 def book_delete(request, pk):
-    book = Book.objects.get(Book, pk=pk)
+    book = Book.objects.get(pk=pk)
 
     if request.method == 'POST':
         book.delete()
