@@ -17,8 +17,8 @@
               <img src="user-placeholder.png" alt="User avatar" class="rounded-circle img-thumbnail">
             </div>
             <div class="col-sm-10">
-              <h5 class="card-title">This is the post title</h5>
-              <p class="card-text">This is the content of the post. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <h5 class="card-title">{{post.title}}</h5>
+              <p class="card-text">{{post.content}}</p>
             </div>
           </div>
           <div class="d-flex align-items-center mt-3">
@@ -42,7 +42,7 @@
             <p>This is a comment on the post.</p>
     
             <div class="collapse" id="reply-comment-1">
-              <form>
+              <form >
                 <div class="form-group">
                   <label for="reply-comment-1-text">Leave a reply</label>
                   <textarea class="form-control reply-comment-area" id="reply-comment-1-text" rows="2"></textarea>
