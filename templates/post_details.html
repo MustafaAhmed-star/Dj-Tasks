@@ -21,10 +21,7 @@
               <p class="card-text">{{post.content}}</p>
             </div>
           </div>
-          <div class="d-flex align-items-center mt-3">
-            <span class="mr-2"><i class="far fa-heart"></i> 123</span>
-            <span><i class="far fa-share-alt"></i> 18</span>
-          </div>
+     
         </div>
       </div>
     
@@ -35,34 +32,65 @@
             <img src="user-placeholder.png" alt="User avatar" class="rounded-circle img-thumbnail">
           </div>
           <div class="col-10">
+          {% for comment in comments  %}
+          
+        
             <div class="d-flex justify-content-between align-items-center">
-              <span><b>Username</b></span>
-              <span class="text-muted">1 hour ago</span>
+              <span><b>{{comment.user}}</b></span>
+              <span class="text-muted">{{comment.created_at}}</span>
             </div>
-            <p>This is a comment on the post.</p>
-    
-            <div class="collapse" id="reply-comment-1">
-              <form >
+            <p>{{comment.content}}.</p>
+            {% endfor %}
+            {% comment %} <div class="collapse" id="reply-comment-1">
+              <form method  = 'post' action = '/posts/{{post.pk}}/add_comment'>
                 <div class="form-group">
-                  <label for="reply-comment-1-text">Leave a reply</label>
+                  {% csrf_token %}
+               
+                  <label for="reply-comment-1-text">{{form}}</label>
                   <textarea class="form-control reply-comment-area" id="reply-comment-1-text" rows="2"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary btn-sm">Reply</button>
               </form>
             </div>
-            <a href="#" onclick="$('#reply-comment-1').collapse('toggle');">Reply</a>
+             {% endcomment %}
+            {% comment %} <div class="collapse" id="reply-comment-1">
+              <form method="post" action="/posts/{{ post.pk }}/add_comment">
+                  <div class="form-group">
+                      {% csrf_token %}
+                      <label for="reply-comment-1-text">{{ form }}</label>
+                      <textarea class="form-control reply-comment-area" id="reply-comment-1-text"
+                          rows="2"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-sm">Reply</button>
+              </form>
+            </div> {% endcomment %}
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
           </div>
         </div>
         </div>
     
       <h3>Leave a comment</h3>
-      <form>
+      <form method="post" action="/posts/{{ post.pk }}/add_comment">
+        {% csrf_token %}
         <div class="form-group">
-          <label for="comment-text">Text</label>
-          <textarea class="form-control" id="comment-text" rows="2"></textarea>
+            <label for="comment-text">Text</label>
+            <textarea class="form-control" name="content" id="comment-text" rows="2"></textarea>
         </div>
         <button type="submit" class="btn btn-primary btn-sm">Submit</button>
-      </form>
+    </form>
     </div>
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfU7zRWzV5VTWgQvFSJoEwnyTsmCtyz3iPlGO4TbV41jIlLi4YuMEEq4bT4hJ+E" crossorigin="anonymous"></script>
