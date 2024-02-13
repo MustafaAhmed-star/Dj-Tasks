@@ -1,0 +1,71 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Post_detail</title>
+  </head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container py-5">
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-2 align-self-center">
+              <img src="user-placeholder.png" alt="User avatar" class="rounded-circle img-thumbnail">
+            </div>
+            <div class="col-sm-10">
+              <h5 class="card-title">This is the post title</h5>
+              <p class="card-text">This is the content of the post. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center mt-3">
+            <span class="mr-2"><i class="far fa-heart"></i> 123</span>
+            <span><i class="far fa-share-alt"></i> 18</span>
+          </div>
+        </div>
+      </div>
+    
+      <h3>Comments</h3>
+      <div class="list-group">
+        <div class="list-group-item d-flex">
+          <div class="col-2 pl-0">
+            <img src="user-placeholder.png" alt="User avatar" class="rounded-circle img-thumbnail">
+          </div>
+          <div class="col-10">
+            <div class="d-flex justify-content-between align-items-center">
+              <span><b>Username</b></span>
+              <span class="text-muted">1 hour ago</span>
+            </div>
+            <p>This is a comment on the post.</p>
+    
+            <div class="collapse" id="reply-comment-1">
+              <form>
+                <div class="form-group">
+                  <label for="reply-comment-1-text">Leave a reply</label>
+                  <textarea class="form-control reply-comment-area" id="reply-comment-1-text" rows="2"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-sm">Reply</button>
+              </form>
+            </div>
+            <a href="#" onclick="$('#reply-comment-1').collapse('toggle');">Reply</a>
+          </div>
+        </div>
+        </div>
+    
+      <h3>Leave a comment</h3>
+      <form>
+        <div class="form-group">
+          <label for="comment-text">Text</label>
+          <textarea class="form-control" id="comment-text" rows="2"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+      </form>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfU7zRWzV5VTWgQvFSJoEwnyTsmCtyz3iPlGO4TbV41jIlLi4YuMEEq4bT4hJ+E" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha
+    
+    </html>
