@@ -8,7 +8,13 @@ from .models import Post,Comment
     
 def addComment(request,pk):
     post = get_object_or_404(Post, pk=pk)
-    comments = Comment.objects.filter(post=post)
+    order = request.GET.get('order', 'newest')  
+    if order == 'oldest':
+        comments = Comment.objects.filter(post=post).order_by('create_at')
+    elif order=='newest':
+        comments = Comment.objects.filter(post=post).order_by('-create_at')
+    else:
+        comments = Comment.objects.filter(post=post)
     
     if request.method == 'POST':
         form = CommentForm(request.POST)
