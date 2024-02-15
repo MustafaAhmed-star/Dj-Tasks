@@ -16,7 +16,7 @@ class Post(models.Model):
     
 class Comment(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE,null = True, blank = True)
-    post = models.ForeignKey(Post, on_delete=models.CASCADE,null = True, blank= True)
+    post = models.ForeignKey(Post,related_name = 'comment_post', on_delete=models.CASCADE,null = True, blank= True)
     content = models.TextField(max_length=1000)
     create_at = models.DateTimeField(default=timezone.now,null = True, blank = True)
     def __str__(self):
